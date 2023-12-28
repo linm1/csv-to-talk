@@ -7,3 +7,6 @@ langchain
 langchain_experimental
 tabulate
 google-cloud-aiplatform
+os
+json
+google.oauth2

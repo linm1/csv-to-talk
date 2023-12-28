@@ -1,6 +1,13 @@
 import streamlit as st
 from langchain_experimental.agents.agent_toolkits import create_csv_agent
 from langchain.llms import VertexAI
+import os
+import json
+from google.oauth2 import service_account
+
+# Load credentials from the environment variable
+credentials_json = json.loads(os.getenv('GOOGLE_APPLICATION_CREDENTIALS'))
+credentials = service_account.Credentials.from_service_account_info(credentials_json)
 
 st.set_page_config(page_title="CSV Agent", page_icon=":robot_face:")
 
