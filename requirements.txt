@@ -5,3 +5,4 @@ pydeck
 streamlit
 langchain
 langchain_experimental
+tabulate
