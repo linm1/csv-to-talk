@@ -6,3 +6,4 @@ streamlit
 langchain
 langchain_experimental
 tabulate
+google-cloud-aiplatform
