@@ -4,10 +4,19 @@ from langchain.llms import VertexAI
 import os
 import json
 from google.oauth2 import service_account
+from google.cloud import aiplatform
 
-# Load credentials from the environment variable
-credentials_json = json.loads(os.getenv('GOOGLE_APPLICATION_CREDENTIALS'))
-credentials = service_account.Credentials.from_service_account_info(credentials_json)
+# Assuming you have stored the JSON contents of your service account key in an environment variable
+credentials_json = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+if credentials_json:
+    credentials_info = json.loads(credentials_json)
+    credentials = service_account.Credentials.from_service_account_info(credentials_info)
+else:
+    raise EnvironmentError("GOOGLE_APPLICATION_CREDENTIALS environment variable not found.")
+
+# Use credentials to initialize the Google Cloud client
+aiplatform.init(project='norse-carport-257701', credentials=credentials)
+
 
 st.set_page_config(page_title="CSV Agent", page_icon=":robot_face:")
 

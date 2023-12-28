@@ -10,3 +10,4 @@ google-cloud-aiplatform
 os
 json
 google.oauth2
+google.cloud
