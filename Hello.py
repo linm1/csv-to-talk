@@ -3,9 +3,9 @@ from langchain_experimental.agents.agent_toolkits import create_csv_agent
 from langchain.llms import VertexAI
 import os
 
-os.environ[
-    "GOOGLE_APPLICATION_CREDENTIALS"] = r'norse-carport-257701-eff34531b53d.json'
-
+import os
+import json
+from google.oauth2 import service_account
 
 st.set_page_config(page_title="CSV Agent", page_icon=":robot_face:")
 
