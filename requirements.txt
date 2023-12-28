@@ -7,7 +7,7 @@ langchain
 langchain_experimental
 tabulate
 google-cloud-aiplatform
-os
-json
-google.oauth2
-google.cloud
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+google-cloud
